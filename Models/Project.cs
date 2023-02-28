@@ -16,6 +16,6 @@
     {
         public int Id { get; set; }
         public string? TaskDescription { get; set;}
-        public string? 
+        public string? TaskNumber { get; set; }
     }
 }
