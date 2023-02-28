@@ -1,0 +1,66 @@
+﻿@model IEnumerable<Simple_Invoicing.Models.Project>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ProjectName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProjectDescription)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProjectContactName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProjectContactEmail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProjectContactPhone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProjectNotes)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProjectName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProjectDescription)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProjectContactName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProjectContactEmail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProjectContactPhone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProjectNotes)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Tasks</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
